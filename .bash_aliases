@@ -1,0 +1,6 @@
+alias ll='ls -lah'
+alias ls='ls -ah'
+alias make='colormake'
+alias df='df -h'
+alias ns='netstat -aln'
+alias nsl='netstat -lnp'
