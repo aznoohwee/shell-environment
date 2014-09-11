@@ -6,7 +6,7 @@ cp .bash_aliases ~/
 cp .bash_env ~/
 
 # Install Common Packages
-sudo apt-get install build-essential vim minicom wireshark git exuberant-ctags colormake
+sudo apt-get install astyle build-essential vim minicom wireshark git exuberant-ctags colormake
 
 # Install Awesome VIMRC Script
 if [ -d ~/.vim_runtime ]; then
@@ -20,7 +20,8 @@ fi
 
 # Add custom VIM shortcuts
 
-cp -f my_configs.vim ~/.vim_runtime/
+cp my_configs.vim ~/.vim_runtime
 
 # Reload environment
+
 . ~/.bashrc

@@ -5,4 +5,4 @@ alias df='df -h'
 alias ns='netstat -aln'
 alias nsl='netstat -lnp'
 alias cpr='cp -R'
-
+alias ..='cd ..'
