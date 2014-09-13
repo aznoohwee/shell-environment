@@ -34,6 +34,7 @@ then
         chmod +x /bin/apt-cyg
     fi
 
+    apt-cyg install ctags
     apt-cyg install curl
     apt-cyg install git
     apt-cyg install git-svn

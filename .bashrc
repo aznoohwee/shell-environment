@@ -13,6 +13,7 @@ fi
 if [[ $unamestr == *CYGWIN* ]]
 then
     platform="cygwin"
+    . ~/.bash_avr
 fi
 
 if [[ $archstr == 'x86_64' ]]
