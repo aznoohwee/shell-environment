@@ -9,7 +9,7 @@ then
     platform='linux'
 fi
 
-if [[ $unamestr == *Cygwin* ]]
+if [[ $unamestr == *CYGWIN* ]]
 then
     platform='cygwin'
 fi
@@ -29,10 +29,19 @@ fi
 
 if [ $platform == 'cygwin' ]
 then
-    if [ ! -f /bin/apt-cyg]; then
+    if [ ! -f /bin/apt-cyg ]; then
         svn --force export http://apt-cyg.googlecode.com/svn/trunk/ /bin
         chmod +x /bin/apt-cyg
     fi
+
+    apt-cyg install curl
+    apt-cyg install git
+    apt-cyg install git-svn
+    apt-cyg install python
+    apt-cyg install python-setuptools
+
+    easy_install pip
+    pip install requests
 fi
 
 # Install Awesome VIMRC Script
@@ -40,11 +49,17 @@ if [ -d ~/.vim_runtime ]; then
     # update the script
     echo "Updating Ultimate .vimrc"
     cd ~/.vim_runtime
+    git stash
     git pull --rebase
+    git stash pop
+    python update_plugins.py
 else
     echo "Getting Ultimate .vimrc"
     git clone git://github.com/amix/vimrc.git ~/.vim_runtime
     sh ~/.vim_runtime/install_awesome_vimrc.sh
+    echo "Applying patches"
+    cd ~/.vim_runtime/sources_non_forked/vim-zenroom2
+    curl https://github.com/amix/vimrc/pull/60.patch | git am
 fi    
 
 # Add custom VIM shortcuts

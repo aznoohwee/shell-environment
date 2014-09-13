@@ -10,7 +10,7 @@ then
     platform="linux"
 fi
 
-if [[ $unamestr == *Cygwin* ]]
+if [[ $unamestr == *CYGWIN* ]]
 then
     platform="cygwin"
 fi

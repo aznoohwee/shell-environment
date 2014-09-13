@@ -5,6 +5,10 @@ if [ $PLATFORM == 'linux' ]; then
     alias make='colormake'
 fi
 
+if [ $PLATFORM == 'cygwin' ]; then
+    alias vi='vim'
+fi
+
 alias df='df -h'
 alias ns='netstat -aln'
 alias nsl='netstat -lnp'
