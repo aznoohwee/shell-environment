@@ -1,6 +1,18 @@
 #!/bin/bash
 
 CWD=`pwd`
+platform='unknown'
+unamestr=`uname`
+
+if [[ $unamestr == *Linux* ]]
+then
+    platform='linux'
+fi
+
+if [[ $unamestr == *Cygwin* ]]
+then
+    platform='cygwin'
+fi
 
 # Add bash aliases
 echo "Adding BASH Aliases"
@@ -10,7 +22,18 @@ cp -v .bash_env ~/
 
 # Install Common Packages
 echo "Installing Common Packages"
-sudo apt-get install astyle build-essential vim minicom wireshark git exuberant-ctags colormake
+if [ $platform == 'linux' ]
+then
+    sudo apt-get install astyle build-essential vim minicom wireshark git exuberant-ctags colormake
+fi
+
+if [ $platform == 'cygwin' ]
+then
+    if [ ! -f /bin/apt-cyg]; then
+        svn --force export http://apt-cyg.googlecode.com/svn/trunk/ /bin
+        chmod +x /bin/apt-cyg
+    fi
+fi
 
 # Install Awesome VIMRC Script
 if [ -d ~/.vim_runtime ]; then
