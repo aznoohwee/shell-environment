@@ -42,6 +42,12 @@ then
 
     easy_install pip
     pip install requests
+
+    # Install Colormake
+    curl https://raw.githubusercontent.com/pagekite/Colormake/master/colormake > /usr/bin/colormake
+    curl https://raw.githubusercontent.com/pagekite/Colormake/master/colormake.pl > /usr/bin/colormake.pl
+    chmod +x colormake
+    chmod +x colormake.pl
 fi
 
 # Install Awesome VIMRC Script
@@ -53,13 +59,15 @@ if [ -d ~/.vim_runtime ]; then
     git pull --rebase
     git stash pop
     python update_plugins.py
+    echo "Applying patches"
+    curl https://github.com/amix/vimrc/pull/60.patch | patch -p1
 else
     echo "Getting Ultimate .vimrc"
     git clone git://github.com/amix/vimrc.git ~/.vim_runtime
     sh ~/.vim_runtime/install_awesome_vimrc.sh
     echo "Applying patches"
     cd ~/.vim_runtime/sources_non_forked/vim-zenroom2
-    curl https://github.com/amix/vimrc/pull/60.patch | git am
+    curl https://github.com/amix/vimrc/pull/60.patch | patch -p1
 fi    
 
 # Add custom VIM shortcuts

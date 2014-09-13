@@ -1,9 +1,7 @@
 alias ls='ls -ah --color'
 alias ll='ls -l'
 
-if [ $PLATFORM == 'linux' ]; then
-    alias make='colormake'
-fi
+alias make='colormake'
 
 if [ $PLATFORM == 'cygwin' ]; then
     alias vi='vim'
