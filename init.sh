@@ -19,12 +19,13 @@ echo "Adding BASH Aliases"
 cp -v .bashrc ~/
 cp -v .bash_aliases ~/
 cp -v .bash_env ~/
+cp -v .screenrc ~/
 
 # Install Common Packages
 echo "Installing Common Packages"
 if [ $platform == 'linux' ]
 then
-    sudo apt-get install astyle build-essential vim minicom wireshark git exuberant-ctags colormake
+    sudo apt-get install astyle build-essential screen vim minicom wireshark git exuberant-ctags colormake
 fi
 
 if [ $platform == 'cygwin' ]
@@ -40,6 +41,7 @@ then
     apt-cyg install git-svn
     apt-cyg install python
     apt-cyg install python-setuptools
+    apt-cyg install screen
 
     easy_install pip
     pip install requests
