@@ -71,6 +71,13 @@ else
     curl https://github.com/amix/vimrc/pull/60.patch | patch -p1
 fi    
 
+# Install more VIM Plugins
+
+if [ ! -d ~/.vim_runtime/sources_non_forked/supertab ]; then
+    cd ~/.vim_runtime/sources_non_forked
+    git clone https://github.com/ervandew/supertab.git
+fi
+
 # Add custom VIM shortcuts
 echo "Adding .vimrc shortcuts"
 cd $CWD
