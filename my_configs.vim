@@ -7,4 +7,5 @@ highlight PmenuSel ctermbg=Magenta ctermfg=Black
 
 imap jj <Esc>
 
+nnoremap <silent> <F8> :TlistToggle<CR>
 nnoremap <silent> <F11> :YRShow<CR>   
