@@ -6,3 +6,5 @@ highlight Pmenu ctermbg=Blue ctermfg=White
 highlight PmenuSel ctermbg=Magenta ctermfg=Black
 
 imap jj <Esc>
+
+nnoremap <silent> <F11> :YRShow<CR>   
