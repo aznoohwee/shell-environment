@@ -5,3 +5,4 @@ map <leader>rf :%!astyle<cr>
 highlight Pmenu ctermbg=Blue ctermfg=White
 highlight PmenuSel ctermbg=Magenta ctermfg=Black
 
+imap jj <Esc>
