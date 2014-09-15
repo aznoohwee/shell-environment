@@ -35,6 +35,9 @@ then
         chmod +x /bin/apt-cyg
     fi
 
+    apt-cyg install automake
+    apt-cyg install autoconf
+    apt-cyg install gcc-g++
     apt-cyg install ctags
     apt-cyg install curl
     apt-cyg install git
@@ -42,7 +45,7 @@ then
     apt-cyg install python
     apt-cyg install python-setuptools
     apt-cyg install screen
-    #apt-cyg install astyle
+    apt-cyg install astyle
 
     easy_install pip
     pip install requests
