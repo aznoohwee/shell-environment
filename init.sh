@@ -40,6 +40,7 @@ then
     apt-cyg install gcc-g++
     apt-cyg install ctags
     apt-cyg install curl
+    apt-cyg install vim
     apt-cyg install git
     apt-cyg install git-svn
     apt-cyg install python
