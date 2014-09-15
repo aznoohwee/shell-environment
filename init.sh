@@ -42,6 +42,7 @@ then
     apt-cyg install python
     apt-cyg install python-setuptools
     apt-cyg install screen
+    #apt-cyg install astyle
 
     easy_install pip
     pip install requests
@@ -51,6 +52,29 @@ then
     curl https://raw.githubusercontent.com/pagekite/Colormake/master/colormake.pl > /usr/bin/colormake.pl
     chmod +x colormake
     chmod +x colormake.pl
+fi
+
+if [ $platform == 'osx' ]
+then
+    # Check if homebrew is installed, if not install it
+    if [ ! -f /usr/local/bin/brew ]; then
+        echo "Install Homebrew"
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    else
+        echo "Updating Homebrew"
+        brew update
+    fi
+
+    brew install ctags
+    brew install wget
+    brew install curl
+    brew install git
+    brew install git-svn
+    brew install vim
+    brew install screen
+    brew install minicom
+    brew install colormake
+    brew install astyle
 fi
 
 # Install Awesome VIMRC Script
@@ -69,7 +93,7 @@ else
     git clone git://github.com/amix/vimrc.git ~/.vim_runtime
     sh ~/.vim_runtime/install_awesome_vimrc.sh
     echo "Applying patches"
-    cd ~/.vim_runtime/sources_non_forked/vim-zenroom2
+    cd ~/.vim_runtime
     curl https://github.com/amix/vimrc/pull/60.patch | patch -p1
 fi    
 

@@ -13,7 +13,11 @@ fi
 if [[ $unamestr == *CYGWIN* ]]
 then
     platform="cygwin"
-    . ~/.bash_avr
+fi
+
+if [[ $unamestr == *Darwin* ]]
+then
+    platform="osx"
 fi
 
 if [[ $archstr == 'x86_64' ]]
@@ -34,3 +38,9 @@ if [ -f ~/.bash_aliases ]
 then
     . ~/.bash_aliases
 fi
+
+if [ -f ~/.bash_avr ]
+then
+    . ~/.bash_avr
+fi
+
