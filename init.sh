@@ -20,6 +20,7 @@ cp -v .bashrc ~/
 cp -v .bash_aliases ~/
 cp -v .bash_env ~/
 cp -v .screenrc ~/
+cp -v .vimperatorrc.local ~/
 
 # Install Common Packages
 echo "Installing Common Packages"
