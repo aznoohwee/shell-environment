@@ -20,7 +20,11 @@ cp -v .bashrc ~/
 cp -v .bash_aliases ~/
 cp -v .bash_env ~/
 cp -v .screenrc ~/
-cp -v .vimperatorrc.local ~/
+if [ $platform == 'cygwin' ]; then
+    cp -v .vimperatorrc.local /cygdrive/c/Users/`whoami`/_vimperatorrc.local
+else
+    cp -v .vimperatorrc.local ~/
+fi
 
 # Install Common Packages
 echo "Installing Common Packages"
