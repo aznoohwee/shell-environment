@@ -1,5 +1,3 @@
-# Include env files
-
 platform='unknown';
 unamestr=`uname`;
 archstr=`uname -m`;

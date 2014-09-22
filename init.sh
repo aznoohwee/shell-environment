@@ -20,6 +20,7 @@ cp -v .bashrc ~/
 cp -v .bash_aliases ~/
 cp -v .bash_env ~/
 cp -v .screenrc ~/
+
 if [ $platform == 'cygwin' ]; then
     cp -v .vimperatorrc.local /cygdrive/c/Users/`whoami`/_vimperatorrc.local
 else
@@ -40,18 +41,7 @@ then
         chmod +x /bin/apt-cyg
     fi
 
-    apt-cyg install automake
-    apt-cyg install autoconf
-    apt-cyg install gcc-g++
-    apt-cyg install ctags
-    apt-cyg install curl
-    apt-cyg install vim
-    apt-cyg install git
-    apt-cyg install git-svn
-    apt-cyg install python
-    apt-cyg install python-setuptools
-    apt-cyg install screen
-    apt-cyg install astyle
+    apt-cyg install automake autoconf gcc-g++ ctags curl vim git git-svn python python-setuptools screen astyle
 
     easy_install pip
     pip install requests

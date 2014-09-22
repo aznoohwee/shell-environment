@@ -1,4 +1,4 @@
-if [$PLATFORM == 'osx' ]; then
+if [ $PLATFORM == 'osx' ]; then
     alias ls='ls -ah'
 else
     alias ls='ls -ah --color'
