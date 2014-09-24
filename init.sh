@@ -103,6 +103,16 @@ if [ ! -d ~/.vim_runtime/sources_non_forked/supertab ]; then
     git clone https://github.com/ervandew/supertab.git
 fi
 
+if [ ! -d ~/.vim_runtime/sources_non_forked/vim-easygrep ]; then
+    cd ~/.vim_runtime/sources_non_forked
+    git clone https://github.com/dkprice/vim-easygrep.git
+fi
+
+if [ ! -d ~/.vim_runtime/sources_non_forked/QFEnter ]; then
+    cd ~/.vim_runtime/sources_non_forked
+    git clone https://github.com/yssl/QFEnter
+fi
+
 # Add custom VIM shortcuts
 echo "Adding .vimrc shortcuts"
 cd $CWD
