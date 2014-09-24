@@ -22,7 +22,7 @@ cp -v .bash_env ~/
 cp -v .screenrc ~/
 
 if [ $platform == 'cygwin' ]; then
-    cp -v .vimperatorrc.local /cygdrive/c/Users/`whoami`/_vimperatorrc.local
+    cp -v .vimperatorrc.local /cygdrive/c/Users/`whoami`/_vimperatorrc
 else
     cp -v .vimperatorrc.local ~/
 fi
