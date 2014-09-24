@@ -113,6 +113,14 @@ if [ ! -d ~/.vim_runtime/sources_non_forked/QFEnter ]; then
     git clone https://github.com/yssl/QFEnter
 fi
 
+if [ ! -d ~/.vim_runtime/sources_non_forked/cvim ]; then
+    cd /tmp
+    wget http://www.vim.org/scripts/download_script.php?src_id=21803 -O cvim.zip
+    rm -rf cvim
+    unzip -d cvim cvim.zip
+    mv cvim  ~/.vim_runtime/sources_non_forked
+fi
+
 # Add custom VIM shortcuts
 echo "Adding .vimrc shortcuts"
 cd $CWD
