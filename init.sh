@@ -41,7 +41,7 @@ then
         chmod +x /bin/apt-cyg
     fi
 
-    apt-cyg install automake autoconf gcc-g++ ctags curl vim git git-svn python python-setuptools screen astyle
+    apt-cyg install automake autoconf gcc-g++ ctags curl vim git git-svn python python-setuptools screen astyle unzip
 
     easy_install pip
     pip install requests
