@@ -97,6 +97,7 @@ else
 fi    
 
 # Install more VIM Plugins
+echo "Installing more plugins"
 
 if [ ! -d ~/.vim_runtime/sources_non_forked/supertab ]; then
     cd ~/.vim_runtime/sources_non_forked
@@ -119,6 +120,12 @@ if [ ! -d ~/.vim_runtime/sources_non_forked/cvim ]; then
     rm -rf cvim
     unzip -d cvim cvim.zip
     mv cvim  ~/.vim_runtime/sources_non_forked
+fi
+
+if [ ! -d ~/.vim_runtime/sources_non_forked/hexman ]; then
+    mkdir -p ~/.vim_runtime/sources_non_forked/hexman/plugin
+    cd ~/.vim_runtime/sources_non_forked/hexman/plugin
+    wget http://www.vim.org/scripts/download_script.php?src_id=21365 -O hexman.vim 
 fi
 
 # Add custom VIM shortcuts
