@@ -1,4 +1,9 @@
-alias ls='ls -ah --color'
+if [ $PLATFORM == 'osx' ]; then
+    alias ls='ls -ah'
+else
+    alias ls='ls -ah --color'
+fi
+
 alias ll='ls -l'
 
 alias make='colormake'

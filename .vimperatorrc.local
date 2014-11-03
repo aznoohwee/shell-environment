@@ -1,0 +1,3 @@
+imap jj <Esc>
+nnoremap <C-j> <C-d>
+nnoremap <C-k> <C-u>

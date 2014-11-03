@@ -21,6 +21,12 @@ cp -v .bash_aliases ~/
 cp -v .bash_env ~/
 cp -v .screenrc ~/
 
+if [ $platform == 'cygwin' ]; then
+    cp -v .vimperatorrc.local /cygdrive/c/Users/`whoami`/_vimperatorrc
+else
+    cp -v .vimperatorrc.local ~/
+fi
+
 # Install Common Packages
 echo "Installing Common Packages"
 if [ $platform == 'linux' ]
@@ -35,6 +41,7 @@ then
         chmod +x /bin/apt-cyg
     fi
 
+<<<<<<< HEAD
     apt-cyg install automake
     apt-cyg install autoconf
     apt-cyg install gcc-g++
@@ -48,6 +55,9 @@ then
     apt-cyg install screen
     apt-cyg install astyle
     apt-cyg install patch
+=======
+    apt-cyg install automake autoconf gcc-g++ ctags curl vim git git-svn python python-setuptools screen astyle unzip
+>>>>>>> e101616bd69fc209ceef62de074d894c737307fd
 
     easy_install pip
     pip install requests
@@ -103,10 +113,35 @@ else
 fi    
 
 # Install more VIM Plugins
+echo "Installing more plugins"
 
 if [ ! -d ~/.vim_runtime/sources_non_forked/supertab ]; then
     cd ~/.vim_runtime/sources_non_forked
     git clone https://github.com/ervandew/supertab.git
+fi
+
+if [ ! -d ~/.vim_runtime/sources_non_forked/vim-easygrep ]; then
+    cd ~/.vim_runtime/sources_non_forked
+    git clone https://github.com/dkprice/vim-easygrep.git
+fi
+
+if [ ! -d ~/.vim_runtime/sources_non_forked/QFEnter ]; then
+    cd ~/.vim_runtime/sources_non_forked
+    git clone https://github.com/yssl/QFEnter
+fi
+
+if [ ! -d ~/.vim_runtime/sources_non_forked/cvim ]; then
+    cd /tmp
+    wget http://www.vim.org/scripts/download_script.php?src_id=21803 -O cvim.zip
+    rm -rf cvim
+    unzip -d cvim cvim.zip
+    mv cvim  ~/.vim_runtime/sources_non_forked
+fi
+
+if [ ! -d ~/.vim_runtime/sources_non_forked/hexman ]; then
+    mkdir -p ~/.vim_runtime/sources_non_forked/hexman/plugin
+    cd ~/.vim_runtime/sources_non_forked/hexman/plugin
+    wget http://www.vim.org/scripts/download_script.php?src_id=21365 -O hexman.vim 
 fi
 
 # Add custom VIM shortcuts
