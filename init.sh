@@ -41,23 +41,7 @@ then
         chmod +x /bin/apt-cyg
     fi
 
-<<<<<<< HEAD
-    apt-cyg install automake
-    apt-cyg install autoconf
-    apt-cyg install gcc-g++
-    apt-cyg install ctags
-    apt-cyg install curl
-    apt-cyg install vim
-    apt-cyg install git
-    apt-cyg install git-svn
-    apt-cyg install python
-    apt-cyg install python-setuptools
-    apt-cyg install screen
-    apt-cyg install astyle
-    apt-cyg install patch
-=======
-    apt-cyg install automake autoconf gcc-g++ ctags curl vim git git-svn python python-setuptools screen astyle unzip
->>>>>>> e101616bd69fc209ceef62de074d894c737307fd
+    apt-cyg install automake autoconf gcc-g++ ctags curl vim git git-svn python python-setuptools screen astyle unzip patch
 
     easy_install pip
     pip install requests
