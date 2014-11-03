@@ -47,6 +47,7 @@ then
     apt-cyg install python-setuptools
     apt-cyg install screen
     apt-cyg install astyle
+    apt-cyg install patch
 
     easy_install pip
     pip install requests
