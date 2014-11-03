@@ -128,6 +128,12 @@ if [ ! -d ~/.vim_runtime/sources_non_forked/hexman ]; then
     wget http://www.vim.org/scripts/download_script.php?src_id=21365 -O hexman.vim 
 fi
 
+# Setup vimdiff
+echo "Setting vimdiff as git merge tool"
+git config merge.tool vimdiff
+git config merge.conflictstyle diff3
+git config mergetool.prompt false
+
 # Add custom VIM shortcuts
 echo "Adding .vimrc shortcuts"
 cd $CWD
