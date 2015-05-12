@@ -64,6 +64,7 @@ then
         brew update
     fi
 
+    brew install astyle
     brew install ctags
     brew install wget
     brew install curl
