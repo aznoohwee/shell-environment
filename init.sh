@@ -85,15 +85,15 @@ if [ -d ~/.vim_runtime ]; then
     git pull --rebase
     git stash pop
     python update_plugins.py
-    echo "Applying patches"
-    curl https://github.com/amix/vimrc/pull/60.patch | patch -p1
+    # echo "Applying patches"
+    # curl https://github.com/amix/vimrc/pull/60.patch | patch -p1
 else
     echo "Getting Ultimate .vimrc"
     git clone git://github.com/amix/vimrc.git ~/.vim_runtime
     sh ~/.vim_runtime/install_awesome_vimrc.sh
     echo "Applying patches"
-    cd ~/.vim_runtime
-    curl https://github.com/amix/vimrc/pull/60.patch | patch -p1
+    # cd ~/.vim_runtime
+    # curl https://github.com/amix/vimrc/pull/60.patch | patch -p1
 fi    
 
 # Install more VIM Plugins
@@ -102,16 +102,33 @@ echo "Installing more plugins"
 if [ ! -d ~/.vim_runtime/sources_non_forked/supertab ]; then
     cd ~/.vim_runtime/sources_non_forked
     git clone https://github.com/ervandew/supertab.git
+else
+    cd ~/.vim_runtime/sources_non_forked/supertab
+    git pull
+fi
+
+if [ ! -d ~/.vim_runtime/sources_non_forked/rust.vim ]; then
+    cd ~/.vim_runtime/sources_non_forked
+    git clone https://github.com/rust-lang/rust.vim.git
+else
+    cd ~/.vim_runtime/sources_non_forked/rust.vim
+    git pull
 fi
 
 if [ ! -d ~/.vim_runtime/sources_non_forked/vim-easygrep ]; then
     cd ~/.vim_runtime/sources_non_forked
     git clone https://github.com/dkprice/vim-easygrep.git
+else
+    cd ~/.vim_runtime/sources_non_forked/vim-easygrep
+    git pull
 fi
 
 if [ ! -d ~/.vim_runtime/sources_non_forked/QFEnter ]; then
     cd ~/.vim_runtime/sources_non_forked
     git clone https://github.com/yssl/QFEnter
+else
+    cd ~/.vim_runtime/sources_non_forked/QFEnter
+    git pull
 fi
 
 if [ ! -d ~/.vim_runtime/sources_non_forked/cvim ]; then
@@ -140,5 +157,5 @@ cd $CWD
 cp -v my_configs.vim ~/.vim_runtime
 
 # Reload environment
-echo "Reloading the enviornment"
+echo "Reloading the environment"
 . ~/.bashrc
