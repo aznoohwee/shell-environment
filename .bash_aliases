@@ -1,4 +1,4 @@
-if [ $PLATFORM == 'osx' ]; then
+if [[ $PLATFORM == 'osx' ]]; then
     alias ls='ls -ah'
 else
     alias ls='ls -ah --color'
@@ -8,7 +8,7 @@ alias ll='ls -l'
 
 alias make='colormake'
 
-if [ $PLATFORM == 'cygwin' ]; then
+if [[ $PLATFORM == 'cygwin' ]]; then
     alias vi='vim'
 fi
 
